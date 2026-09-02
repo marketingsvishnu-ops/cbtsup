@@ -2,247 +2,356 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sports News Today</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo</title>
 
-```
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  color: #222;
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
-header {
-  background: #111827;
-  color: white;
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body{
+  background:#0f1020;
+  color:white;
 }
 
-header h1 { font-size: 28px; }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
 }
 
-.hero {
-  background: linear-gradient(135deg, #2563eb, #111827);
-  color: white;
-  padding: 60px 8%;
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
 }
 
-.hero h2 {
-  font-size: 42px;
-  max-width: 700px;
-  margin-bottom: 15px;
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
 }
 
-.container {
-  width: 84%;
-  max-width: 1200px;
-  margin: 35px auto;
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#181a35,#0b0c18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
 }
 
-.section-title {
-  margin-bottom: 20px;
-  font-size: 28px;
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #9C27B0;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(156,39,176,.28);
 }
 
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
+.badge{
+  display:inline-block;
+  background:#9C27B0;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
 }
 
-.card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+h1{
+  font-size:34px;
+  color:#9C27B0;
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
 
-.card .image {
-  height: 160px;
-  background: #dbeafe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
 }
 
-.card-content {
-  padding: 20px;
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
 }
 
-.category {
-  color: #2563eb;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
+.feature{
+  background:linear-gradient(90deg,#1b1b1b,#2b2208);
+  border:1px solid rgba(212,175,55,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
 }
 
-.card h3 {
-  margin: 8px 0;
-  font-size: 20px;
+.feature span{
+  color:#9C27B0;
 }
 
-.card p {
-  color: #666;
-  line-height: 1.5;
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #1ebe5d;
+  transition:.3s;
 }
 
-.scoreboard {
-  margin-top: 40px;
-  background: #111827;
-  color: white;
-  padding: 25px;
-  border-radius: 12px;
+.signup-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.03);
 }
 
-.score {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 1px solid #374151;
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
 }
 
-footer {
-  margin-top: 50px;
-  padding: 25px;
-  text-align: center;
-  background: #111827;
-  color: #aaa;
+.website-row a{
+  text-decoration:none;
 }
 
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
+.website{
+  color:#25D366;
+}
+
+.whatsapp-small{
+  color:#9C27B0;
+}
+
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
+}
+
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#9C27B0;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(156,39,176,0.6);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#7B1FA2;
+  box-shadow:0 12px 25px rgba(156,39,176,0.8);
+}
+
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
   }
 
-  .hero h2 {
-    font-size: 30px;
+  .demo,
+  .right{
+    width:100%;
   }
 
-  nav a {
-    margin: 0 8px;
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
   }
 }
-```
 
-  </style>
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
+    font-size:16px;
+  }
+
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
+
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
+
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-  <header>
-    <h1>🏆 Sports Daily</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Football</a>
-      <a href="#">Cricket</a>
-      <a href="#">Tennis</a>
-      <a href="#">More</a>
-    </nav>
-  </header>
+<div class="container">
 
-  <section class="hero">
-    <h2>Latest Sports News & Updates</h2>
-    <p>Tuesday, September 1, 2026</p>
-  </section>
+  <div class="demo">
+    <a href="https://cbtf.com/clk?src=dvOFld5Vu" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 CLICK ON SIGNUP 🔥</a>
+    <iframe src="https://cbtf.com/clk?src=dvOFld5Vu"></iframe>
+  </div>
 
-  <main class="container">
+  <div class="right">
+    <div class="box">
 
 ```
-<h2 class="section-title">Top Stories</h2>
+  <div class="badge">AUTO WEBSITE</div>
 
-<div class="news-grid">
+  <h1>Get Your ID Now</h1>
 
-  <article class="card">
-    <div class="image">⚽</div>
-    <div class="card-content">
-      <span class="category">Football</span>
-      <h3>Transfer Deadline Day Takes Centre Stage</h3>
-      <p>
-        Premier League clubs are racing to complete their final transfers
-        before the September 1 deadline.
-      </p>
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">www.cbtf.com
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
-  </article>
 
-  <article class="card">
-    <div class="image">⚽</div>
-    <div class="card-content">
-      <span class="category">LaLiga</span>
-      <h3>Barcelona Cruise Past Rayo Vallecano</h3>
-      <p>
-        Raphinha and Lamine Yamal both scored twice as Barcelona won 5–2
-        and moved to the top of the LaLiga table.
-      </p>
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
-  </article>
 
-  <article class="card">
-    <div class="image">🎾</div>
-    <div class="card-content">
-      <span class="category">Tennis</span>
-      <h3>Alcaraz Makes Winning US Open Return</h3>
-      <p>
-        Carlos Alcaraz returned from his injury layoff with a straight-set
-        victory over Roman Safiullin.
-      </p>
+    <div class="feature">
+      Auto Website Support:
+      <a
+        class="signup-btn"
+        href="https://cbtf.com/clk?src=dvOFld5Vu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click on Signup
+      </a>
     </div>
-  </article>
 
-  <article class="card">
-    <div class="image">🏏</div>
-    <div class="card-content">
-      <span class="category">Cricket</span>
-      <h3>Cricket Action Continues</h3>
-      <p>
-        Follow the latest scores, player performances and international
-        cricket developments.
-      </p>
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
     </div>
-  </article>
+
+  </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://cbtf.com/clk?src=dvOFld5Vu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 www.cbtf.com
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/447516115104"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/447516115104?text=Hello%20I%20want%20new%20manual%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
 
 </div>
-
-<section class="scoreboard">
-  <h2>⚡ Latest Results</h2>
-
-  <div class="score">
-    <span>Barcelona</span>
-    <strong>5 - 2</strong>
-    <span>Rayo Vallecano</span>
-  </div>
-
-  <div class="score">
-    <span>Arsenal</span>
-    <strong>1 - 0</strong>
-    <span>Aston Villa</span>
-  </div>
-
-  <div class="score">
-    <span>Alcaraz</span>
-    <strong>3 - 0</strong>
-    <span>Safiullin</span>
-  </div>
-</section>
 ```
 
-  </main>
+  </div>
 
-  <footer>
-    <p>&copy; 2026 Sports Daily | Latest sports updates</p>
-  </footer>
+</div>
 
 </body>
 </html>
